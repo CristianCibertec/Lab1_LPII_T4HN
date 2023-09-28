@@ -1,0 +1,17 @@
+package controllers;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+import models.Empleado;
+
+
+public class EmpleadoController {
+	
+    public String createEmpleado(String apellido, String nombre, int edad, String sexo, int salario )
+    {
+    	SessionFactory sessionFactory = new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Empleado.class).buildSessionFactory();
+    	
+    	return "Empleado creado";
+    }
+}
